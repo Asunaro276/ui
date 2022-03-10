@@ -1,0 +1,34 @@
+import React from 'react';
+export interface Props {
+    addedInputClasses?: string;
+    autoComplete?: string;
+    autofocus?: boolean;
+    className?: string;
+    defaultValue?: string | number;
+    descriptionText?: string;
+    disabled?: boolean;
+    error?: string;
+    icon?: any;
+    id?: string;
+    inputRef?: React.RefObject<HTMLInputElement>;
+    label?: string;
+    afterLabel?: string;
+    beforeLabel?: string;
+    labelOptional?: string;
+    layout?: 'horizontal' | 'vertical';
+    name?: string;
+    onChange?(x: React.ChangeEvent<HTMLInputElement>): void;
+    onFocus?(x: React.FocusEvent<HTMLInputElement>): void;
+    onBlur?(x: React.FocusEvent<HTMLInputElement>): void;
+    onKeyDown?(x: React.KeyboardEvent<HTMLInputElement>): void;
+    placeholder?: string;
+    step?: number;
+    style?: React.CSSProperties;
+    value?: any;
+    size?: 'tiny' | 'small' | 'medium' | 'large' | 'xlarge';
+    min?: number;
+    max?: number;
+    borderless?: boolean;
+}
+declare function InputNumber({ addedInputClasses, autoComplete, autofocus, className, defaultValue, descriptionText, disabled, error, icon, id, inputRef, label, afterLabel, beforeLabel, labelOptional, layout, name, onChange, onBlur, onFocus, onKeyDown, placeholder, value, step, style, size, min, max, borderless, }: Props): JSX.Element;
+export default InputNumber;
