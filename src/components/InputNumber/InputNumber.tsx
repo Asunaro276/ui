@@ -9,6 +9,7 @@ import { Space } from '../../index'
 import InputNumberStyles from './InputNumber.module.css'
 
 export interface Props {
+  addedInputClasses?: string
   autoComplete?: string
   autofocus?: boolean
   className?: string
@@ -30,6 +31,7 @@ export interface Props {
   onBlur?(x: React.FocusEvent<HTMLInputElement>): void
   onKeyDown?(x: React.KeyboardEvent<HTMLInputElement>): void
   placeholder?: string
+  step?: number
   style?: React.CSSProperties
   value?: any
   size?: 'tiny' | 'small' | 'medium' | 'large' | 'xlarge'
@@ -39,6 +41,7 @@ export interface Props {
 }
 
 function InputNumber({
+  addedInputClasses,
   autoComplete,
   autofocus,
   className,
@@ -61,6 +64,7 @@ function InputNumber({
   onKeyDown,
   placeholder,
   value,
+  step,
   style,
   size = 'medium',
   min,
@@ -153,7 +157,8 @@ function InputNumber({
             ref={inputRefCurrent}
             type={'number'}
             value={value}
-            className={inputClasses.join(' ')}
+            step={step}
+            className={inputClasses.join(' ') + addedInputClasses}
             min={min}
             max={max}
           />
